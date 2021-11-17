@@ -1,9 +1,5 @@
 package life.qbic.springminimaltemplate
 
-import java.nio.charset.StandardCharsets
-import java.nio.file.Files
-import java.nio.file.Paths
-
 /**
  * Example implementation of a {@link MessageService}
  *
