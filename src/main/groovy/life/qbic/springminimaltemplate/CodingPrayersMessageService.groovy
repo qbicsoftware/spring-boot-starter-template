@@ -1,7 +1,5 @@
 package life.qbic.springminimaltemplate
 
-import org.springframework.stereotype.Component
-
 /**
  * Example implementation of a {@link MessageService}
  *

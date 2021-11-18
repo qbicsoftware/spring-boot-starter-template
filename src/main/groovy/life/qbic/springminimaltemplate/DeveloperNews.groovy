@@ -1,8 +1,5 @@
 package life.qbic.springminimaltemplate
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Component
-
 /**
  * An example {@link NewsMedia} implementation for developer news.
  *
@@ -12,7 +9,6 @@ class DeveloperNews implements NewsMedia{
 
     private MessageService service
 
-    @Autowired
     DeveloperNews(MessageService service) {
         this.service = service
     }
