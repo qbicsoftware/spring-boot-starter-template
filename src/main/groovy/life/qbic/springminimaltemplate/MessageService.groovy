@@ -14,5 +14,5 @@ interface MessageService {
      * @return the latest message
      * @since 0.1.0
      */
-    String collect()
+    String collectMessages()
 }
