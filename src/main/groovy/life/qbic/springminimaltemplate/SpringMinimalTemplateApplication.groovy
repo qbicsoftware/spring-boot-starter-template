@@ -14,7 +14,7 @@ class SpringMinimalTemplateApplication {
 
 		MessageService service = context.getBean("messageService", MessageService.class)
 		println "####################### Message of the day ##################"
-		println service.collect()
+		println service.collectMessages()
 		println "##############################################################"
 
 		context.close()

@@ -18,7 +18,7 @@ class CodingPrayersMessageService implements MessageService {
     }
 
     @Override
-    String collect() {
+    String collectMessages() {
         return messages.get(new Random().nextInt(messages.size()))
     }
 
