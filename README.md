@@ -11,7 +11,7 @@ mvn spring-boot:run
 
 ## What the app does
 
-This small app just parses a file with a collection of good coding prayers and creates a singleton instance of an `CodingPrayersMessageService`. This concrete implementation uses the interface `MessageService`, that comes with only one public method: `String collect()`. 
+This small app just parses a file with a collection of good coding prayers and creates a singleton instance of an `CodingPrayersMessageService`. This concrete implementation uses the interface `MessageService`, that comes with only one public method: `String collectMessages()`. 
 
 In the main app code, we just retrieve this Singleton instance or Bean in Spring lingua from the loaded context and call the service. The collected message is then printed out to the command line interface:
 
