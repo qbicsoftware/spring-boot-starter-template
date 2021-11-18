@@ -36,5 +36,41 @@ Have you written unit tests yet? If not, do it!
 
 ## Realisation of IoC and DPI
 
+The messages collection is stored in a simple text file `messages.txt`, that is provided with the apps `resources`. Just go ahead and change the content of the file and run the app!
+
+<img width="308" alt="grafik" src="https://user-images.githubusercontent.com/9976560/142380084-d01081d2-79fb-4ff3-acc5-3140dca38f6a.png">
+
+
+So how does the app know where to find this file and **load the messages content**?
+
+We have configured it as a **external property** in a file `application.properties` and load the configuration on application startup! Cool eh?
+
 <img width="381" alt="grafik" src="https://user-images.githubusercontent.com/9976560/142376871-5bee068f-208c-4af0-a35b-9442ee498789.png">
+
+This is how the file content looks like:
+
+```
+messages.file=messages.txt
+```
+
+So how do we access the value of the `messages.file` property in our application with Spring?
+
+Have a look in the class `AppConfig`, there the magic happens:
+
+```java
+@Configuration
+@PropertySource("application.properties")
+class AppConfig {
+
+    @Value('${messages.file}')
+    public String messagesFile
+
+```
+
+We define the property source, which is the file `application.properties` that is provided in the resource folder of the app and available to the classpath. 
+We also tell with the annotation `@Configuration` Spring, hey this is a class that holds app configuration data!
+
+With the annotation `@Value('${messages.file}')` we tell Spring, which property's value should be injected. Here we make use of field injection, other types of injection like method and constructor injection are also possible.
+
+
 
