@@ -106,6 +106,10 @@ class SpringMinimalTemplateApplication {
 
 ```
 
+### Inversion of Control
+
+// Todo
+
 
 
 
