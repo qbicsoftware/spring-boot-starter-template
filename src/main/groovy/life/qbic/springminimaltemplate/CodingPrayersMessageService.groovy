@@ -1,5 +1,7 @@
 package life.qbic.springminimaltemplate
 
+import org.springframework.stereotype.Component
+
 /**
  * Example implementation of a {@link MessageService}
  *
@@ -18,7 +20,7 @@ class CodingPrayersMessageService implements MessageService {
     }
 
     @Override
-    String collectMessages() {
+    String collectMessage() {
         return messages.get(new Random().nextInt(messages.size()))
     }
 

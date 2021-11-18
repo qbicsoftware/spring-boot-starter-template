@@ -19,9 +19,14 @@ class AppConfig {
     @Value('${messages.file}')
     public String messagesFile
 
-    @Bean()
+    @Bean
     public MessageService messageService() {
         return new CodingPrayersMessageService(messagesFile)
+    }
+
+    @Bean
+    NewsMedia newsMedia() {
+        return new DeveloperNews(messageService())
     }
 
 }

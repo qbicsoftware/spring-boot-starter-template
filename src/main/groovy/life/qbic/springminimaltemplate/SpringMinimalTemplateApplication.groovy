@@ -12,9 +12,9 @@ class SpringMinimalTemplateApplication {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)
 
-		MessageService service = context.getBean("messageService", MessageService.class)
+		NewsMedia media = context.getBean("newsMedia", NewsMedia.class)
 		println "####################### Message of the day ##################"
-		println service.collectMessages()
+		println media.getNews()
 		println "##############################################################"
 
 		context.close()
