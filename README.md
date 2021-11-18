@@ -146,7 +146,7 @@ That doesn't look good, does it? In order to create an instance of a message ser
 
 Instead, we would like to not take care about these details, so we invert the control and inject the dependency via the constructor. 
 
-That's all it is. 
+Please find more in depth documentation on the official [Spring website](https://spring.io/projects/spring-framework).
 
 
 
