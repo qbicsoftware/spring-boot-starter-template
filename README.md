@@ -74,5 +74,42 @@ We also tell with the annotation `@Configuration` Spring, hey this is a class th
 
 With the annotation `@Value('${messages.file}')` we tell Spring, which property's value should be injected. Here we make use of field injection, other types of injection like method and constructor injection are also possible.
 
+So how is the concrete implementation of the `MessageService` presented to Spring? We can use the `@Bean` annotation here, to tell Spring: _hey, this is sth you must load on startup and provide to the context_.
+
+```java
+@Configuration
+@PropertySource("application.properties")
+class AppConfig {
+
+    ....
+
+    @Bean
+    MessageService messageService() {
+        return new CodingPrayersMessageService(messagesFile)
+    }
+```
+
+That is all there is, you can now load the bean in your main application code:
+
+```
+@SpringBootApplication
+class SpringMinimalTemplateApplication {
+
+	static void main(String[] args) {
+		SpringApplication.run(SpringMinimalTemplateApplication, args)
+    
+    // load the annotation context
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)
+    // get the service bean
+    MessageService service = context.getBean("messageService", MessageService.class)
+    // collect the message and praise the magic
+    println service.collectMessage()
+
+```
+
+
+
+
+
 
 
