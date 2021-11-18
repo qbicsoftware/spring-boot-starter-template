@@ -136,7 +136,7 @@ So why is this inversion of control?
 
 Because the `DeveloperNews` class does not manage the instantiation of a concrete message service. The configuration happened outside of the class, therefore the DeveloperNews class has no direct control over the instantiation. If it had, it would look like this:
 
-```
+```java
 DeveloperNews(String filePathToMessages) {
         this.service = new CodingPrayersMessageService(filePathToMessages)
 }
