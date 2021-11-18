@@ -91,19 +91,18 @@ class AppConfig {
 
 That is all there is, you can now load the bean in your main application code:
 
-```
+```java
 @SpringBootApplication
 class SpringMinimalTemplateApplication {
 
-	static void main(String[] args) {
-		SpringApplication.run(SpringMinimalTemplateApplication, args)
-    
-    // load the annotation context
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)
-    // get the service bean
-    MessageService service = context.getBean("messageService", MessageService.class)
-    // collect the message and praise the magic
-    println service.collectMessage()
+    static void main(String[] args) {
+	SpringApplication.run(SpringMinimalTemplateApplication, args)
+	// load the annotation context
+	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)
+	// get the service bean
+	MessageService service = context.getBean("messageService", MessageService.class)
+	// collect the message and praise the magic
+	println service.collectMessage()
 
 ```
 
