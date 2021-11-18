@@ -20,7 +20,7 @@ class AppConfig {
     public String messagesFile
 
     @Bean
-    public MessageService messageService() {
+    MessageService messageService() {
         return new CodingPrayersMessageService(messagesFile)
     }
 

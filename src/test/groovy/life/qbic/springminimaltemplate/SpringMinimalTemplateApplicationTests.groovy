@@ -17,7 +17,7 @@ class SpringMinimalTemplateApplicationTests extends Specification {
 
 	def "autowired works"() {
 		when:
-		String messages = messageService.collectMessages()
+		String messages = messageService.collectMessage()
 		println(messages)
 		then:
 		messages != null
