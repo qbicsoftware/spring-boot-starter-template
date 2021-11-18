@@ -108,9 +108,45 @@ class SpringMinimalTemplateApplication {
 
 ### Inversion of Control
 
-// Todo
+You might have already spotted the interface `NewsMedia` and its implementing class `DeveloperNews` in the app's source code. Here you can see an example for the magic of inversion of control.
 
+The `NewsMedia` interface is just an abstraction that we will later use, because we don't care about the actual implementation details. By this, we also do not create any dependencies to concrete implementation details but on actual behaviour. Concrete implementations can then later be exchanged without causing any breaking changes in the client code base. 
 
+The interface has only one method: `String getNews()`. Now let's have a closer look into the class `DeveloperNews` that implements this interface:
+
+```java
+class DeveloperNews implements NewsMedia{
+
+    private MessageService service
+
+    DeveloperNews(MessageService service) {
+        this.service = service
+    }
+
+    @Override
+    String getNews() {
+        return service.collectMessage()
+    }
+}
+```
+
+When you check the constructor signature, you see that this method has only one argument, which is a reference to an object of type `MessageService`. And when the `getNews()` method is called by the client, the class delegates this request to the message service. Since we have stored the reference in a private field, that is super easy, we known how to call the service. 
+
+So why is this inversion of control? 
+
+Because the `DeveloperNews` class does not manage the instantiation of a concrete message service. The configuration happened outside of the class, therefore the DeveloperNews class has no direct control over the instantiation. If it had, it would look like this:
+
+```
+DeveloperNews(String filePathToMessages) {
+        this.service = new CodingPrayersMessageService(filePathToMessages)
+}
+```
+
+That doesn't look good, does it? In order to create an instance of a message service, we would need to know the conrete implementation and its required properties (here it is the file path to the `messages.txt`). So the `DeveloperNews` class has the control over the message service.
+
+Instead, we would like to not take care about these details, so we invert the control and inject the dependency via the constructor. 
+
+That's all it is. 
 
 
 
