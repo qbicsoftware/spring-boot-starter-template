@@ -1,5 +1,5 @@
 # Spring Boot Starter (template)
-A minimal working starter template for Spring Boot applications with a demonstration of Java annotation-based [Inversion of Control](https://stackoverflow.com/questions/3058/what-is-inversion-of-control) via [Dependency Injection](https://stackoverflow.com/questions/130794/what-is-dependency-injection). 
+A minimal working starter template for a Spring Boot non-web applications using the Spring [CommandLineRunner](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/CommandLineRunner.html) interface with a demonstration of Java annotation-based [Inversion of Control](https://stackoverflow.com/questions/3058/what-is-inversion-of-control) via [Dependency Injection](https://stackoverflow.com/questions/130794/what-is-dependency-injection). 
 
 ## Run the app
 
@@ -107,6 +107,8 @@ class SpringMinimalTemplateApplication {
 ```
 
 ### Inversion of Control
+
+<img width="990" alt="grafik" src="https://user-images.githubusercontent.com/9976560/144576610-4dd4aa0a-1b58-4832-aaac-0bb70757a9a1.png">
 
 You might have already spotted the interface `NewsMedia` and its implementing class `DeveloperNews` in the app's source code. Here you can see an example for the magic of inversion of control.
 
