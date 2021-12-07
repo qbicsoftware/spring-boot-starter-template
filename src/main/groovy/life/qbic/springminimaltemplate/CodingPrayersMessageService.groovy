@@ -24,6 +24,6 @@ class CodingPrayersMessageService implements MessageService {
 
     private List<String> readMessagesFromClassPath(String path) {
         URL url = getClass().getClassLoader().getResource(path)
-        return url.readLines().each {it.trim()}.collect()
+        return url.readLines().each { it.trim() }.collect()
     }
 }

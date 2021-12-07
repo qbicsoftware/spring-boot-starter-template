@@ -7,17 +7,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @SpringBootApplication
 class SpringMinimalTemplateApplication {
 
-	static void main(String[] args) {
-		SpringApplication.run(SpringMinimalTemplateApplication, args)
+    static void main(String[] args) {
+        SpringApplication.run(SpringMinimalTemplateApplication, args)
 
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)
 
-		NewsMedia media = context.getBean("newsMedia", NewsMedia.class)
-		println "####################### Message of the day ##################"
-		println media.getNews()
-		println "##############################################################"
+        NewsMedia media = context.getBean("newsMedia", NewsMedia.class)
+        println "####################### Message of the day ##################"
+        println media.getNews()
+        println "##############################################################"
 
-		context.close()
-	}
+        context.close()
+    }
 
 }

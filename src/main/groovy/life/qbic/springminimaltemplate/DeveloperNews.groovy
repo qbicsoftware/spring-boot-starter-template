@@ -5,7 +5,7 @@ package life.qbic.springminimaltemplate
  *
  * @since 0.1.0
  */
-class DeveloperNews implements NewsMedia{
+class DeveloperNews implements NewsMedia {
 
     private MessageService service
 

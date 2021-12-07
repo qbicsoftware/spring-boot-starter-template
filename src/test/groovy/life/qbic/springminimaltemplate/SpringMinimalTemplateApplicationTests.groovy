@@ -8,19 +8,19 @@ import spock.lang.Specification
 @SpringBootTest
 class SpringMinimalTemplateApplicationTests extends Specification {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
-	@Autowired
-	private MessageService messageService
+    @Autowired
+    private MessageService messageService
 
-	def "autowired works"() {
-		when:
-		String messages = messageService.collectMessage()
-		println(messages)
-		then:
-		messages != null
-	}
+    def "autowired works"() {
+        when:
+        String messages = messageService.collectMessage()
+        println(messages)
+        then:
+        messages != null
+    }
 
 }
